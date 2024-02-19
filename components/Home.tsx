@@ -14,7 +14,7 @@ import SlideUpText from "./SlideUpText";
 export default function Home() {
   const [isFinished, setIsFinished] = useState(false);
   const nameFirst = ", I'm";
-  const nameSecond = "Phuwis.";
+  const nameSecond = "James.";
 
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -27,7 +27,7 @@ export default function Home() {
     damping: 15,
   });
   const textY = useTransform(smoothY, [0, 1], ["0%", "200%"]);
-  const opacityY = useTransform(smoothY,[0, 0.3], [1, 0])
+  const opacityY = useTransform(smoothY,[0, 0.7], [1, 0])
 
   return (
     <div ref={ref} className="z-0 h-screen relative">

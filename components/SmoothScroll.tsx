@@ -59,7 +59,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       <motion.div
         ref={contentRef}
         style={{ y: y }}
-        className="flex flex-col fixed w-screen top-0"
+        className="flex flex-col fixed w-screen top-0 overflow-scroll "
       >
         {children}
       </motion.div>

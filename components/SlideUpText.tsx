@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 interface SlideUpTextProps {
     text : string
-    isFinished : boolean
+    isFinished? : boolean
 }
 export default function SlideUpText ({text, isFinished} : SlideUpTextProps) {
     return(
@@ -19,7 +19,7 @@ export default function SlideUpText ({text, isFinished} : SlideUpTextProps) {
                   animate={isFinished && "open"}
                   custom={index}
                   className={`font-extrabold text-5xl sm:text-8xl ${
-                    word === " " ? "mr-6" : ""
+                    word === " " ? "sm:mr-6 mr-4" : ""
                   }`}
                 >
                   {word}
