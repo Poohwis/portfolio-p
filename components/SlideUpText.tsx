@@ -4,8 +4,13 @@ import { motion } from "framer-motion"
 interface SlideUpTextProps {
     text : string
     isFinished? : boolean
+    font? :string
+    color? : string
+    smScreenText? : string
+    lgScreenText? : string
+    custom? : string
 }
-export default function SlideUpText ({text, isFinished} : SlideUpTextProps) {
+export default function SlideUpText ({text, isFinished, color, smScreenText, lgScreenText, custom, font} : SlideUpTextProps) {
     return(
             <div>
             {text.split("").map((word, index) => (
@@ -16,11 +21,18 @@ export default function SlideUpText ({text, isFinished} : SlideUpTextProps) {
                 <motion.span
                   variants={slideUpSingle}
                   initial="initial"
+                  whileInView={"open"}
+                  viewport={{once: true}}
                   animate={isFinished && "open"}
                   custom={index}
-                  className={`font-extrabold text-5xl sm:text-8xl ${
-                    word === " " ? "sm:mr-6 mr-4" : ""
-                  }`}
+                  className={`
+                  ${word === " " ? "sm:mr-6 mr-4" : ""}
+                  ${font ? font : "font-extrabold"}
+                  ${smScreenText ? smScreenText : "text-5xl"}
+                  ${lgScreenText ? lgScreenText : "sm:text-8xl"}
+                  ${color ? color : "text-black"}
+                  ${custom ? custom : ""}`
+                }
                 >
                   {word}
                 </motion.span>
