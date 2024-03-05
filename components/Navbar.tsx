@@ -1,16 +1,10 @@
 import Link from "next/link";
 import MagneticWrapper from "./MagneticWrapper";
+import { scrollToSection } from "@/libs/helper";
 
 export default function Navbar() {
 
   const LinkComponent = (props: { title: string; link: string }) => {
-
-    const scrollToSection = (id : string)=> {
-      const rect = document.getElementById(id)?.getBoundingClientRect()
-      if (rect !== undefined){
-      window.scrollTo({top: rect.top, behavior: "smooth"})
-      }
-    }
     
     const { title, link } = props;
     return (
@@ -18,7 +12,7 @@ export default function Navbar() {
         <Link
           onClick={()=> scrollToSection(link.replace("/#",""))}
           href={link}
-          className="sm:text-2xl text-lg  transition duration-500  font-semibold 
+          className="sm:text-2xl text-lg  transition duration-500  font-normal 
         hover:cursor-pointer "
         >
           {title}

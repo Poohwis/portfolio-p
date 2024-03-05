@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MouseEvent } from "react";
 
 interface MagneticWrapperProps {
@@ -12,6 +12,19 @@ interface MagneticWrapperProps {
 export default function MagneticWrapper({ children, pullRatio = 1 }: MagneticWrapperProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isEnable, setIsEnabled] = useState(true)
+
+  useEffect(()=>{
+    const handleResize = () =>{
+      setIsEnabled(window.innerWidth > 640)
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+
+    return () =>{
+      window.removeEventListener("resize", handleResize)
+    }
+  })
 
   const mouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e;
@@ -28,7 +41,7 @@ export default function MagneticWrapper({ children, pullRatio = 1 }: MagneticWra
 
   const { x, y } = position;
 
-  return (
+  return isEnable ?(
     <motion.div
       onMouseMove={mouseMove}
       onMouseLeave={mouseLeave}
@@ -36,7 +49,10 @@ export default function MagneticWrapper({ children, pullRatio = 1 }: MagneticWra
       animate={{ x, y }}
       transition={{ type: "spring", stiffness: 150, damping: 20, mass: 0.1 }}
     >
+
       {children}
     </motion.div>
-  );
+  ) : (
+    <div ref={ref}>{children}</div>
+  )
 }

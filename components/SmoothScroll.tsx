@@ -4,10 +4,9 @@ import {
   useSpring,
   useTransform,
   motion,
-  useMotionValueEvent,
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import Navbar from "./Navbar";
+import ContactSection from "./ContactSection";
 
 interface SmoothScrollProps {
   children: React.ReactNode;
@@ -59,7 +58,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       <motion.div
         ref={contentRef}
         style={{ y: y }}
-        className="flex flex-col fixed w-screen top-0 overflow-scroll "
+        className=" flex flex-col fixed w-screen top-0 overflow-scroll"
       >
         {children}
       </motion.div>

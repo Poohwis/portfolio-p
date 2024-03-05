@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import {  Nunito_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import NavButton from "@/components/NavButton";
 
-const nunitosans = Nunito_Sans({subsets: ['latin']})
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Phuwis — Fullstack web developer",
-  description: "Motivated self-taught programmer seeking full-stack web developer opportunities. ",
+  description:
+    "Motivated self-taught programmer seeking full-stack web developer opportunities. ",
 };
 
 export default function RootLayout({
@@ -19,7 +24,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={nunitosans.className}>{children}</body>
+      <body className={`${poppins.className} `}>
+        {children}
+        </body>
     </html>
   );
 }

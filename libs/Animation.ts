@@ -27,24 +27,32 @@ export const slideUp = {
 
 export const slideUpSingle = {
   initial: { y: "100%", opacity: 0 },
-  open: (i : number) => ({
+  open: (i: number) => ({
     y: "0%",
     opacity: 100,
     transition: {
-      y: { duration: 0.7 , delay: 0.1 * i},
+      y: { duration: 0.7, delay: 0.1 * i },
       opacity: { duration: 1 },
     },
   }),
 };
 
-export const slideRightNav = {
-    initial: { opacity: 0, y: "-10%" },
-    open: {
-      opacity: 100,
-      y: "0%",
-      transition: {
-        opacity: { duration: 1, delay: 1 },
-        y: { duration: 1.2, delay: 1,  },
-      },
+export const navIn = {
+  initial: { opacity: 0, y: "-10%" },
+  open: {
+    opacity: 100,
+    y: "0%",
+    transition: {
+      opacity: { duration: 1,  },
+      y: { duration: 1.2, },
     },
-  };
+  },
+};
+export const pageButton = {
+  initial: { y: 0 },
+  open: {
+    y: -45 ,
+    height: 50,
+    transition: { y: {delay: 1, duration: 1.2},},
+  },
+};

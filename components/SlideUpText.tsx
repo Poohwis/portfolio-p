@@ -26,10 +26,10 @@ export default function SlideUpText ({text, isFinished, color, smScreenText, lgS
                   animate={isFinished && "open"}
                   custom={index}
                   className={`
-                  ${word === " " ? "sm:mr-6 mr-4" : ""}
+                  ${word === " " ? "sm:mr-6 mr-3" : ""}
                   ${font ? font : "font-extrabold"}
-                  ${smScreenText ? smScreenText : "text-5xl"}
-                  ${lgScreenText ? lgScreenText : "sm:text-8xl"}
+                  ${smScreenText ? smScreenText : "text-4xl"}
+                  ${lgScreenText ? lgScreenText : "sm:text-7xl"}
                   ${color ? color : "text-black"}
                   ${custom ? custom : ""}`
                 }
