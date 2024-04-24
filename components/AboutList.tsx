@@ -3,7 +3,7 @@ import CapsuleWrapper from "./CapsuleWrapper";
 
 export default function AboutList() {
   const labels = [
-    "KMITL - BEng. Mechatronics",
+    "KMITL - BEng Mechatronics",
     "Vehicle design engineer",
     "Self-taught programmer",
     "Meta Front-End Cert.",

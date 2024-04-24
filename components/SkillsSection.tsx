@@ -40,7 +40,7 @@ export default function SkillsSection() {
         sm:items-start 
         font-light sm:indent-8 indent-4"
         >
-          These are things I have learned and applied in my projects. and I'm
+          These are things I have learned and applied in my projects. and I&apos;m
           always eager to learn more about the current stack and new
           technologies that could expand my capabilities.
         </div>

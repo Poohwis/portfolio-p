@@ -131,7 +131,7 @@ export default function Home() {
               Design engineer turned passionate coder
             </div>
             <div className="text-sm sm:text-xl font-normal text-balance text-darkgray/80">
-              I'm a self-taught programmer striving to become a well-rounded
+              I&apos;m a self-taught programmer striving to become a well-rounded
               full-stack developer.
             </div>
           </motion.div>
