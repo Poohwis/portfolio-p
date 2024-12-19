@@ -1,17 +1,31 @@
-'use client'
-import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
+"use client";
+import womenDrivingTesla from "@/public/drivingtesla.jpg";
+import office from "@/public/office.jpg"
 import SlideUpText from "./SlideUpText";
+import ProjectComponent from "./ProjectComponent";
 
-export default function ProjectsSection (){
-    return (
+export default function ProjectsSection() {
+  return (
     <section id="projects" className="sm:my-36 my-20 pt-2 ">
-      <SlideUpText text="projects"
+      <SlideUpText
+        text="projects"
         smScreenText="text-3xl"
         color="text-white/80"
         font="font-normal"
       />
-      <div className="w-full h-[500px]  bg-lightgray mt-10"></div>
-        </section>
-    )
+      <ProjectComponent
+        header={"Rent & Go"}
+        description={"Transportation rent services"}
+        words={["Showcase", "NextJs", "Front-end"]}
+        image={womenDrivingTesla}
+      />
+      <ProjectComponent
+        header={"Taskmaster"}
+        description={"Task management services"}
+        words={["Fullstack" , "Database", "NextJs"]}
+        image={office}
+        reverse
+      />
+    </section>
+  );
 }
