@@ -67,7 +67,7 @@ export default function ProjectComponent({
               className="w-full scale-110 "
             />
           </motion.div>
-          <video src="/videos/test.mp4" autoPlay loop playsInline muted></video>
+          {/* <video src="/videos/test.mp4" autoPlay loop playsInline muted></video> */}
           {/* video */}
         </div>
       </div>
