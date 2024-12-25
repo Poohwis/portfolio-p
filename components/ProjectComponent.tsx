@@ -3,11 +3,13 @@ import { useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 
 interface ProjectComponentProps {
-  header: String;
-  description: String;
-  words: String[];
+  header: string;
+  description: string;
+  words: string[];
   image: StaticImageData;
   reverse?: boolean;
+  videoSrc?: string;
+  projectLink : string
 }
 export default function ProjectComponent({
   header,
@@ -15,6 +17,8 @@ export default function ProjectComponent({
   words,
   image,
   reverse = false,
+  videoSrc,
+  projectLink
 }: ProjectComponentProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -35,19 +39,30 @@ export default function ProjectComponent({
         } `}
       >
         <div className="inline-flex sm:flex-col flex-row items-end justify-between">
-          <div  className={`flex flex-col ${reverse ? "sm:text-start" : "sm:text-end"}`}>
-            <h1 ref={ref} className="text-white/80 font-semibold sm:text-4xl text-2xl">
+          <div
+            className={`flex flex-col ${
+              reverse ? "sm:text-start" : "sm:text-end"
+            }`}
+          >
+            <h1
+              ref={ref}
+              className="text-white/80 font-semibold sm:text-4xl text-2xl"
+            >
               {header}
             </h1>
             <p className="text-white/80 text-sm sm:text-xl font-light">
               {description}
             </p>
           </div>
-          <div className={ `mt-4 flex w-full flex-col items-end ${reverse ? "sm:items-start" : "sm:items-end"}` }>
+          <div
+            className={`mt-4 flex w-full flex-col items-end ${
+              reverse ? "sm:items-start" : "sm:items-end"
+            }`}
+          >
             {words.map((item, index) => (
               <motion.div
                 key={String(item) + index}
-                initial={{x : -100}}
+                initial={{ x: -100 }}
                 whileInView={{ x: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
@@ -58,18 +73,34 @@ export default function ProjectComponent({
             ))}
           </div>
         </div>
-        <div className="w-full h-auto max-w-[1100px] rounded-lg sm:mt-0 mt-2 overflow-hidden border-[px] border-white">
+        <a
+        href={projectLink}
+        target="_blank"
+        rel="noopener noreferrer"
+          className="relative justify-center
+         items-center flex w-full h-auto max-w-[1100px] rounded-lg
+         sm:mt-0 mt-2 overflow-hidden border-[px] border-white group hover:cursor-pointer"
+        >
+          {videoSrc && (
+            <video
+              className="absolute z-10 w-[80%] rounded-lg "
+              src={videoSrc}
+              autoPlay
+              loop
+              playsInline
+              muted
+            ></video>
+          )}
           <motion.div style={{ y }}>
             <Image
               src={image}
               alt={"cover"}
               placeholder="blur"
-              className="w-full scale-110 "
+              className="-z-10 w-full scale-110 group-hover:scale-125 transition-tranform duration-1000"
             />
           </motion.div>
-          {/* <video src="/videos/test.mp4" autoPlay loop playsInline muted></video> */}
           {/* video */}
-        </div>
+        </a>
       </div>
     </div>
   );

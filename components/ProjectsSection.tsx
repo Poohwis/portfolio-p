@@ -1,6 +1,6 @@
 "use client";
-import womenDrivingTesla from "@/public/drivingtesla.jpg";
-import office from "@/public/office.jpg"
+import ridingCar from "@/public/ridingcar.webp"
+import office from "@/public/office.webp"
 import SlideUpText from "./SlideUpText";
 import ProjectComponent from "./ProjectComponent";
 
@@ -17,13 +17,17 @@ export default function ProjectsSection() {
         header={"Rent & Go"}
         description={"Transportation rent services"}
         words={["Showcase", "NextJs", "Front-end"]}
-        image={womenDrivingTesla}
+        videoSrc={"/videos/rent_and_go_demo.mp4"}
+        projectLink="https://nextjs-rentcar.vercel.app/"
+        image={ridingCar}
       />
       <ProjectComponent
         header={"Taskmaster"}
         description={"Task management services"}
         words={["Fullstack" , "Database", "NextJs"]}
         image={office}
+        videoSrc="/videos/task_app_demo.mp4"
+        projectLink="https://taskmaster-demoproject.vercel.app/"
         reverse
       />
     </section>
