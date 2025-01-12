@@ -16,7 +16,7 @@ export default function ContactSection() {
     );
   }
   return (
-    <section id="contact" className="relative flex justify-center bg-lightgray">
+    <section id="contact" className="relative flex justify-center bg-secondary">
       {/* bg */}
       <div className="w-full absolute h-full">
         <div className="h-full flex flex-col-reverse">{gradientDiv1}</div>

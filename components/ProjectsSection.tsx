@@ -28,7 +28,7 @@ export default function ProjectsSection() {
         image={office}
         videoSrc="/videos/task_app_demo.mp4"
         projectLink="https://taskmaster-demoproject.vercel.app/"
-        reverse
+        // reverse
       />
     </section>
   );

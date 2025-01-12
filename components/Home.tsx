@@ -29,7 +29,7 @@ export default function Home() {
   const x = useTransform(smoothY, [0, 1], ["0%", "-10%"]);
 
   return (
-    <div ref={ref} className="z-0 h-screen relative bg-lightgray">
+    <div ref={ref} className="z-0 h-screen relative bg-secondary">
       {/* bg */}
       <div className="absolute flex justify-center items-center w-full h-full">
         <motion.div
@@ -132,7 +132,7 @@ export default function Home() {
             </div>
             <div className="text-sm sm:text-xl font-normal text-balance text-darkgray/80">
               I&apos;m a self-taught programmer striving to become a well-rounded
-              full-stack developer.
+              software developer.
             </div>
           </motion.div>
         </div>

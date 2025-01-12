@@ -4,6 +4,8 @@ import AboutList from "./AboutList";
 import MagneticWrapper from "./MagneticWrapper";
 import SlideUpText from "./SlideUpText";
 import { ChevronRight } from "lucide-react";
+import photo from "@/assets/photo/me.webp"
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
@@ -16,20 +18,25 @@ export default function AboutSection() {
           color="text-white/80"
         />
       </div>
-      <div className="flex flex-row sm:mt-10 mt-2 sm:gap-x-10">
+      <div className="flex flex-row sm:mt-10 mt-2 sm:gap-x-10 ">
         {/* NAME */}
         <div className="flex flex-col  text-white/80 font-extrabold">
           <h2 className="text-2xl sm:text-6xl font-thin">Phuwis</h2>
           <h2 className="text-2xl sm:text-6xl font-thin">Phatthanaphirom</h2>
           <h3 className="text-sm sm:text-2xl font-thin">
-            Full-stack developer
+            Software developer
           </h3>
         </div>
         {/* PICTURE */}
-        <div className="flex flex-col flex-1">
-          <div className="sm:ml-8 ml-4 flex flex-1 sm:bg-lightgray rounded-2xl  justify-end items-center">
-            <div className="sm:hidden w-[100px] h-[100px] rounded-full bg-lightgray"></div>
-          </div>
+        <div className="flex flex-col flex-1 items-end sm:pr-20 ">
+            <MagneticWrapper
+            pullRatio={0.1}
+            >
+
+            <div className="w-[100px] h-[100px] sm:w-[200px] sm:h-[200px] rounded-full bg-lightgray flex items-center justify-center overflow-hidden">
+              <Image alt="photo-phuwis" src={photo} className="w-full scale-150" />
+            </div>
+            </MagneticWrapper>
         </div>
       </div>
       <div className="sm:grid sm:grid-cols-2 sm:mt-10 mt-4 gap-x-8  ">
@@ -43,23 +50,27 @@ export default function AboutSection() {
             vehicle R&D. I have always been fascinated by the endless
             possibilities that complex problem-solving and innovative
             programming can provide. Now, I have decided to pursue an inspired
-            career as a full-stack developer.
+            career as a software developer.
           </p>
           <div className="flex justify-end sm:mr-28">
             <MagneticWrapper pullRatio={0.2}>
-              <Link href={"/"} >
+              <a 
+              href={"https://drive.google.com/file/d/1w5-vsMSFZcj46SVA_htxXgM_LBluQyex/view?usp=sharing"} 
+              target="_blank"
+              rel="noopener noreferrer"
+               >
               <div
                 className="flex  sm:mt-10 mt-4 items-center justify-center
             text-sm sm:text-base 
-            font-bold text-black/80 border-black/80 bg-white/90
-            px-4 py-1 border-[1px] rounded-full
-            hover:opacity-80 hover:cursor-pointer 
+            font-normal text-white/80 border-primary bg-primary
+            px-4 py-1 border-[1px] rounded-full group hover:opacity-80 transition-all
+            hover:cursor-pointer 
             "
               >
-                Open CV
-                <ChevronRight className="w-4 h-6 translate-x-1"/> 
+                open resume
+                <ChevronRight className="w-4 h-6 translate-x-1 group-hover:-rotate-90 transition-transform"/> 
                 </div>
-              </Link>
+              </a>
             </MagneticWrapper>
           </div>
         </div>

@@ -15,8 +15,8 @@ const config: Config = {
         'orange' : "#f73503",
         'lime' : "#b1f700",
         // "primary": "#5352fe"
-        "primary" : "#f73503",
-        "secondary": "#de522f"
+        "primary" : "#B17457",
+        "secondary": "#F5EFE7",
       },
       animation:{
         blob: "blob 7s infinite"

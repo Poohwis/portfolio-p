@@ -26,3 +26,21 @@
     animation-delay: 4s;
   }
 }
+
+@layer utilities {
+  .grain-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grain-effect::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/photo/bedge-grunge.png'); /* Local file path */
+    background-repeat: repeat;
+    opacity: 0.15; /* Adjust opacity as needed */
+    pointer-events: none;
+  }
+
+}

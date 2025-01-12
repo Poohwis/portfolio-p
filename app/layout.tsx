@@ -11,7 +11,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Phuwis — Fullstack web developer",
   description:
-    "Motivated self-taught programmer seeking full-stack web developer opportunities. ",
+    "Motivated self-taught programmer seeking software developer opportunities. ",
 };
 
 export default function RootLayout({

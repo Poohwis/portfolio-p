@@ -1,6 +1,7 @@
 import { handleMailClick, scrollToSection } from "@/libs/helper";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import MagneticWrapper from "./MagneticWrapper";
 
 interface NavButtonProps {
   isMenuShow: boolean;
@@ -54,7 +55,7 @@ export default function NavButton({ isMenuShow }: NavButtonProps) {
         variants={openClose}
         initial={"closed"}
         animate={isMenuActive ? "open" : "closed"}
-        className="bg-secondary rounded-3xl absolute  flex flex-col justify-end"
+        className="bg-primary rounded-3xl absolute  flex flex-col justify-end"
       >
         <div className="flex  mt-[100px] flex-col text-2xl space-y-4 ml-10 text-white items-start">
           {navButtonList.map((label, index) => {
@@ -78,50 +79,61 @@ export default function NavButton({ isMenuShow }: NavButtonProps) {
             animate={isMenuActive ? "open" : "closed"}
             className="flex-flex-col space-y-2"
           >
-            <p
+            <div
               onClick={() => handleMailClick("poohwis.p@gmail.com")}
               className="hover:cursor-pointer hover:text-black transition-all hover:translate-x-2"
             >
               Email
-            </p>
-            <p
+            </div>
+            <div
               onClick={() => handleCopyClick("+66939109081")}
               className="hover:cursor-pointer hover:text-black transition-all hover:translate-x-2"
             >
               {isCopied ? "Copied" : "Telephone"}
-            </p>
+            </div>
           </motion.div>
           <motion.div
             variants={navText(5)}
             animate={isMenuActive ? "open" : "closed"}
-            className="flex-flex-col space-y-2"
+            className="flex-flex-col space-y-2 "
           >
             <div>
               <a
                 target="_blank"
                 href={"https://linkedin.com/in/phuwis"}
-                className="hover:cursor-pointer hover:text-black transition-all hover:translate-x-2"
+                rel="noopener noreferrer"
               >
-                Linkedin
+                <div className="hover:cursor-pointer hover:text-black transition-all hover:translate-x-2">
+                  Linkedin
+                </div>
               </a>
             </div>
             <div>
               <a
                 target="_blank"
                 href="https://github.com/Poohwis"
-                className="hover:cursor-pointer hover:text-black transition-all hover:translate-x-2"
+                rel="noopener noreferrer"
               >
-                Github
+                <div className="hover:cursor-pointer hover:text-black transition-all hover:translate-x-2">
+                  Github
+                </div>
               </a>
             </div>
           </motion.div>
-          <motion.div
-            variants={navText(6)}
-            animate={isMenuActive ? "open" : "closed"}
-            className="flex items-center justify-center text-sm"
-          >
-            <p className="px-4 py-2 bg-black rounded-full">Open CV</p>
-          </motion.div>
+          <MagneticWrapper pullRatio={0.3}>
+            <motion.a
+              href={
+                "https://drive.google.com/file/d/1w5-vsMSFZcj46SVA_htxXgM_LBluQyex/view?usp=sharing"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={navText(6)}
+              animate={isMenuActive ? "open" : "closed"}
+              className="hover:cursor-pointer flex items-center justify-center text-sm"
+            >
+              <p className="px-2 py-2 bg-black rounded-full">Open Resume</p>
+            </motion.a>
+          </MagneticWrapper>
         </div>
       </motion.div>
       <motion.div
@@ -137,7 +149,7 @@ export default function NavButton({ isMenuShow }: NavButtonProps) {
           animate={{ y: isMenuActive ? "-50%" : "0" }}
           transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
         >
-          <div className="w-16 h-10  flex items-center justify-center bg-secondary text-white  ">
+          <div className="w-16 h-10  flex items-center justify-center bg-primary text-white  ">
             <p>menu</p>
           </div>
           <div className="w-16 h-10 flex items-center justify-center bg-darkgray  text-white">

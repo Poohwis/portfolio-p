@@ -96,7 +96,7 @@ export default function ProjectComponent({
               src={image}
               alt={"cover"}
               placeholder="blur"
-              className="-z-10 w-full scale-110 group-hover:scale-125 transition-tranform duration-1000"
+              className="-z-10 w-full scale-110 group-hover:scale-125 transition-tranform duration-1000  filter group-hover:sepia-[.25]  group-hover:blur-[5px]"
             />
           </motion.div>
           {/* video */}
