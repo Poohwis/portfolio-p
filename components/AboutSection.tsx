@@ -6,6 +6,7 @@ import SlideUpText from "./SlideUpText";
 import { ChevronRight } from "lucide-react";
 import photo from "@/assets/photo/me.webp"
 import Image from "next/image";
+import { RESUME_LINK } from "@/libs/links";
 
 export default function AboutSection() {
   return (
@@ -55,7 +56,7 @@ export default function AboutSection() {
           <div className="flex justify-end sm:mr-28">
             <MagneticWrapper pullRatio={0.2}>
               <a 
-              href={"https://drive.google.com/file/d/1w5-vsMSFZcj46SVA_htxXgM_LBluQyex/view?usp=sharing"} 
+              href={RESUME_LINK} 
               target="_blank"
               rel="noopener noreferrer"
                >

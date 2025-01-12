@@ -2,6 +2,7 @@ import { handleMailClick, scrollToSection } from "@/libs/helper";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import MagneticWrapper from "./MagneticWrapper";
+import { RESUME_LINK } from "@/libs/links";
 
 interface NavButtonProps {
   isMenuShow: boolean;
@@ -123,7 +124,7 @@ export default function NavButton({ isMenuShow }: NavButtonProps) {
           <MagneticWrapper pullRatio={0.3}>
             <motion.a
               href={
-                "https://drive.google.com/file/d/1w5-vsMSFZcj46SVA_htxXgM_LBluQyex/view?usp=sharing"
+RESUME_LINK
               }
               target="_blank"
               rel="noopener noreferrer"
