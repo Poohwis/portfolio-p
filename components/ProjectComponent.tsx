@@ -39,6 +39,8 @@ export default function ProjectComponent({
         } `}
       >
         <div className="inline-flex sm:flex-col flex-row items-end justify-between">
+          <a href={projectLink} target="_blank" rel="noopener noreferrer">
+
           <div
             className={`flex flex-col ${
               reverse ? "sm:text-start" : "sm:text-end"
@@ -54,6 +56,7 @@ export default function ProjectComponent({
               {description}
             </p>
           </div>
+          </a>
           <div
             className={`mt-4 flex w-full flex-col items-end ${
               reverse ? "sm:items-start" : "sm:items-end"
@@ -96,6 +99,8 @@ export default function ProjectComponent({
               src={image}
               alt={"cover"}
               placeholder="blur"
+              // loading="lazy"
+              priority
               className="-z-10 w-full scale-110 group-hover:scale-125 transition-tranform duration-1000  filter group-hover:sepia-[.25]  group-hover:blur-[5px]"
             />
           </motion.div>

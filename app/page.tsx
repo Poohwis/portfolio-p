@@ -12,11 +12,20 @@ import Home from "@/components/Home";
 import Profile from "@/components/Profile";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
-import SmoothScroll from "@/components/SmoothScroll";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NavButton from "@/components/NavButton";
+import Lenis from "lenis";
 
 export default function HomePage() {
+  useEffect(()=> {
+    const lenis = new Lenis()
+    function raf(time:any) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+  },[]
+  )
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -36,7 +45,6 @@ export default function HomePage() {
     <>
       <div ref={ref} className="z-10">
         <NavButton isMenuShow={isMenuShow} />
-        <SmoothScroll>
           <Home />
           <Profile>
             <AboutSection />
@@ -61,7 +69,6 @@ export default function HomePage() {
             </div>
             </div>
           </div>
-        </SmoothScroll>
       </div>
       <div className="-z-10 fixed bottom-0 w-screen ">
         <ContactSection />

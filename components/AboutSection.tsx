@@ -41,7 +41,7 @@ export default function AboutSection() {
         </div>
       </div>
       <div className="sm:grid sm:grid-cols-2 sm:mt-10 mt-4 gap-x-8  ">
-        <AboutList />
+      <AboutList />
         <div className="sm:mt-0 mt-12 flex justify-between flex-col ">
           <p
             className="sm:indent-8 indent-4 flex flex-1 

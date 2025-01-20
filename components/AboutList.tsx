@@ -18,7 +18,8 @@ export default function AboutList() {
   return (
     <div className="flex sm:items-end ">
       <div
-        className="flex 
+        className="
+        flex
         sm:flex-wrap 
         sm:justify-center sm:items-center 
         sm:px-4 px-6
@@ -26,10 +27,13 @@ export default function AboutList() {
         sm:gap-y-3 
         no-scrollbar 
         left-0  w-screen 
-        overflow-x-scroll sm:overflow-x-hidden
-        sm:static fixed 
-        sm:py-2 py-1
-         hover:cursor-default"
+        overflow-x-scroll
+        sm:overflow-x-hidden
+        sm:static
+        absolute
+        sm:py-2
+        py-1
+        hover:cursor-default"
       >
         {labels.map((label, index) => {
           return (

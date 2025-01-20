@@ -17,7 +17,7 @@ export default function ProjectsSection() {
         header={"Rent & Go"}
         description={"Transportation rent services"}
         words={["Showcase", "NextJs", "Front-end"]}
-        videoSrc={"/videos/rent_and_go_demo.mp4"}
+        videoSrc={"/videos/rent_and_go_demo.webm"}
         projectLink="https://nextjs-rentcar.vercel.app/"
         image={ridingCar}
       />
@@ -26,9 +26,8 @@ export default function ProjectsSection() {
         description={"Task management services"}
         words={["Fullstack" , "Database", "NextJs"]}
         image={office}
-        videoSrc="/videos/task_app_demo.mp4"
+        videoSrc="/videos/task_app_demo.webm"
         projectLink="https://taskmaster-demoproject.vercel.app/"
-        // reverse
       />
     </section>
   );
