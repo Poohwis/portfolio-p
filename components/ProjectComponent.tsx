@@ -10,6 +10,7 @@ interface ProjectComponentProps {
   reverse?: boolean;
   videoSrc?: string;
   projectLink : string
+  verticalVdo? : boolean
 }
 export default function ProjectComponent({
   header,
@@ -18,7 +19,7 @@ export default function ProjectComponent({
   image,
   reverse = false,
   videoSrc,
-  projectLink
+  projectLink,verticalVdo
 }: ProjectComponentProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -69,7 +70,7 @@ export default function ProjectComponent({
                 whileInView={{ x: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="text-white/80 sm:text-base text-sm font-light flex flex-row items-center gap-x-1"
+                className="text-white/80 sm:text-base text-sm font-light flex flex-row items-center gap-x-1 text-nowrap"
               >
                 {item}
               </motion.div>
@@ -86,7 +87,8 @@ export default function ProjectComponent({
         >
           {videoSrc && (
             <video
-              className="absolute z-10 w-[80%] rounded-lg "
+              style={{height : verticalVdo ? "90%" : "", width : verticalVdo ? "auto" : ""}}
+              className="absolute z-10 w-[80%] rounded-lg"
               src={videoSrc}
               autoPlay
               loop
@@ -101,7 +103,7 @@ export default function ProjectComponent({
               placeholder="blur"
               // loading="lazy"
               priority
-              className="-z-10 w-full scale-110 group-hover:scale-125 transition-tranform duration-1000  filter group-hover:sepia-[.25]  group-hover:blur-[5px]"
+              className="-z-10 w-full scale-110 group-hover:scale-125 transition-tranform duration-1000 blur-[2px] filter group-hover:sepia-[.25]  group-hover:blur-[10px]"
             />
           </motion.div>
           {/* video */}
