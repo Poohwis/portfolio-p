@@ -51,13 +51,13 @@ export function ContactList() {
       </SocialButton>
       <SocialButton>
         <Linkedin size={16} />
-        <a target="_blank" href="https:linkedin.com/in/phuwis">
+        <a target="_blank" rel="noopener noreferrer" href="https:linkedin.com/in/phuwis">
           linkedin
         </a>
       </SocialButton>
       <SocialButton>
         <Github size={16} />
-        <a target="_blank" href="https://github.com/Poohwis">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Poohwis">
           Github
         </a>
       </SocialButton>

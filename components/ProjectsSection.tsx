@@ -4,6 +4,7 @@ import office from "@/public/office.webp";
 import SlideUpText from "./SlideUpText";
 import newyork from "@/public/newyork.webp"
 import ProjectComponent from "./ProjectComponent";
+import liarsCard from "@/public/liarscard.webp"
 
 export default function ProjectsSection() {
   return (
@@ -37,6 +38,15 @@ export default function ProjectsSection() {
         image={newyork}
         videoSrc="/videos/flag_quizzer_demo.webm"
         projectLink={"https://flagquizzer.vercel.app/"}
+        verticalVdo
+      />
+      <ProjectComponent
+        header={"Liar's Card"}
+        description={"Multiplayer card game"}
+        words={[ "React frontend","Go backend", "WebSocket communication", "Motion animations",]}
+        image={liarsCard}
+        videoSrc="/videos/liars_card_demo.webm"
+        projectLink={"https://liars-card.vercel.app/"}
         verticalVdo
       />
     </section>
